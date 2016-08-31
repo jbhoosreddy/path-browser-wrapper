@@ -4,9 +4,10 @@
  * @author Jaideep Bhoosreddy <jaideepb@buffalo.edu> (http://github.com/jbhoosreddy)
  */
 
-const isWin = require("os") === "WINNT";
-const win32 = Object.assign({}, require("path").win32);
-const posix = Object.assign({}, require("path").posix);
+const path = require('path');
+const isWin = require('./os') === "WINNT";
+const win32 = Object.assign({}, path.win32);
+const posix = Object.assign({}, path.posix);
 
 win32.resolve = posix.resolve = undefined;
 win32.relative = posix.relative = undefined;
@@ -14,6 +15,7 @@ win32.relative = posix.relative = undefined;
 function isURL(url) {
   try {
     new URL(url);
+
     return true;
   } catch (e) {
     if (e instanceof TypeError) {
