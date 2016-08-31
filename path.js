@@ -5,8 +5,8 @@
  */
 
 const isWin = require("os") === "WINNT";
-const win32 = require("path").win32;
-const posix = require("path").posix;
+const win32 = Object.assign({}, require("path").win32);
+const posix = Object.assign({}, require("path").posix);
 
 win32.resolve = posix.resolve = undefined;
 win32.relative = posix.relative = undefined;
