@@ -15,6 +15,7 @@ win32.relative = posix.relative = undefined;
 function isURL(url) {
   try {
     new URL(url);
+
     return true;
   } catch (e) {
     if (e instanceof TypeError) {

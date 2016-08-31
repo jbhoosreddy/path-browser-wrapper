@@ -1,7 +1,7 @@
 let os;
 const ua = window.navigator.userAgent;
 
-if(ua) {
+if (ua) {
   if (ua.includes('Linux')) {
     os = 'Linux';
   } else if (ua.includes('Windows')) {
